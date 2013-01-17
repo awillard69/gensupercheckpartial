@@ -1,12 +1,12 @@
 CFLAGS=-g
 PROGRAMS=dumpcalls gensupercheckpartial
-DOBJECTS=dumpcalls.o gensupercheckpartial
+DOBJECTS=dumpcalls.o gensupercheckpartial.o
 CC=g++
 
 all: $(PROGRAMS)
 
 clean:
-	rm -f $(PROGRAMS) $(OBJECTS) core *.stackdump
+	rm -f $(PROGRAMS) $(DOBJECTS) core *.stackdump
 
 dumpcalls: dumpcalls.o
 	$(CC) -o $@ $^

@@ -254,8 +254,7 @@ int main( int argc, char **argv )
 			prefix[1] = charvals[charidx2];
 
 			//fprintf( stderr, "Building %s, %d, %d\n", prefix, charidx1, charidx2 );
-			//fprintf( stderr, "Building %s\n", prefix ); fflush( stderr );
-
+			//fprintf( stderr, "%s ", prefix ); fflush( stderr );
 
 			// now look for any callsign containing the prefix, or any portion of the 
 			// call and output it to the output file pointer
@@ -273,8 +272,6 @@ int main( int argc, char **argv )
 					if( team_ptrs != NULL )
 					{
 						//fprintf( stderr, "Looking for [%s]\n", call_ptrs[ curcall ] );
-						
-						//if( bsearch( call_ptrs[ curcall ], team_ptrs, team_cnt, sizeof(char *), (int(*)(const void*, const void*))strcmp) != NULL )
 						if( bsearch( call_ptrs[ curcall ], team_ptrs, team_cnt, sizeof(char *), call_compare) != NULL )
 						{
 							//fprintf( stderr, "Found team member %s\n", call_ptrs[ curcall ] );
