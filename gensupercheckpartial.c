@@ -70,8 +70,6 @@ int main( int argc, char **argv )
 				break;
 
 			case 'h': /* '?' */
-				fprintf( stderr, "%s -i <input file> -o <output file> [-t <team file> -n <team name>]\n", argv[0] );
-				break;
 			default: /* '?' */
 				fprintf( stderr, "%s -i <input file> -o <output file> [-t <team file> -n <team name>]\n", argv[0] );
 				return( 99 );
@@ -302,9 +300,5 @@ int main( int argc, char **argv )
 	fprintf( stderr, "Wrote index header: %d units, %d bytes\n", bytes, bytes * sizeof(int) ); fflush( stderr );
 
 	fclose( scp );
-
-
-
-
 
 }
