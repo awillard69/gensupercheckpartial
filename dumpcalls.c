@@ -60,8 +60,8 @@ int main( int argc, char **argv )
 		return( errno );
 	}	
 
-	fread( (void *)keys, (37 * 37) + 1, sizeof(int), input );
-	fprintf( stderr, "Current file location after reading keys: %ld, 0x%x\n", ftell( input ), ftell( input ) );
+	int bytes = fread( (void *)keys, (37 * 37) + 1, sizeof(int), input );
+	fprintf( stderr, "Current file location after reading keys: %ld, 0x%x\n", ftell( input ), (unsigned int) ftell( input ) );
 
 	while( !feof( input )  )
 	{
@@ -75,7 +75,7 @@ int main( int argc, char **argv )
 		printf( "%s\n", call );
 	}
 
-	fprintf( stderr, "Current file location after reading all data: %ld, 0x%x\n", ftell( input ), ftell( input ) );
+	fprintf( stderr, "Current file location after reading all data: %ld, 0x%x\n", ftell( input ), (unsigned int) ftell( input ) );
 	
 	// clean up
 	if( input )
